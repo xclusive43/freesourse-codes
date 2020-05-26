@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="AJAY PRAJAPATI">
+        <meta viewport="width-scale:device width">
+        <title>class work 2</title>
+        <style>
+            body{
+                padding: 10px;
+                margin: 10px;
+            }
+            table tr td,th{
+                padding: 10px;
+                background: #292424;
+                color: aliceblue;
+                 
+            }
+            
+            form input
+            {
+                border-radius: 20px;
+                border: 5px solid #86ac32;
+                padding: 10px;
+            }
+            
+            select 
+            {
+                border-radius: 20px;
+                border: 5px solid #86ac32;
+                padding: 10px;
+            }
+            
+             
+        </style>
+        
+        <script type="text/javascript">
+        
+        function validate()
+            {
+                 if(document.register.name1.value == "")
+                     {
+                         alert("name cannot be empty!");
+                         document.register.name1;
+                     }
+                if(document.register.email1.value == "")
+                     {
+                         alert("Email cannot be empty!");
+                         document.register.email1;
+                     }
+                
+                  if(document.register.mobile1.value =="")
+                        { alert("Please enter your mobile number");
+                            document.register.mobile1;
+                
+                         }
+                
+                if(document.register.select1.selectedIndex==0)
+                        { alert("Please select your Department");
+                            document.register.select1; 
+                
+                         }
+            }
+            
+            function Email()
+            {
+                var emailID = document.register.email1.value;
+                var positionofat = emailID.indexOf("@");
+                var positionofdot = emailID.lastIndexOf(".");
+                if (positionofat<1 || positionofdot<positionofat+2 || positionofdot+2>=emailID.length)
+                    {
+                        alert("Please Invalid Email ID");
+                        document.register.email1;
+           
+                    }
+            }
+        </script>
+    </head>
+<body>
+    <div class="form_1">
+    <form name ="register" onsubmit="return(validate());">
+        <table  >
+        
+        <tr><td colspan="2"> <center>Registration Form</center></td></tr>
+        <tr><td> Name </td><td><input type="text" name="name1"></td></tr>
+        <tr><td> Email Id </td><td><input type="text" name="email1" onchange = "Email();"></td></tr>
+        <tr><td> Mobile Number </td><td><input type="number" name="mobile1"></td></tr>
+        <tr><td> Department </td><td><select name="select1">
+            <option value="">Select department </option>
+            <option>Computer Application </option>
+            <option>MBA </option>
+            <option>Hoti-culture </option>
+            <option>English </option>
+            </select></td></tr>
+                  <tr><td colspan="2"> <center> <input type="submit" name="submit"></center></td></tr>
+        </table>
+        </form>
+    </div>
+    </body>
+</html>
